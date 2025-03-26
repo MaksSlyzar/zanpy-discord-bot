@@ -1,1 +1,0 @@
-# zanpy-discord-bot
