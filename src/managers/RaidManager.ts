@@ -24,8 +24,8 @@ export default class RaidManager {
     this.raids = [];
   }
 
-  createRaid(interaction: ChatInputCommandInteraction, raidName: string, rolesUnparsed: string, gearTier: string) {
-    const newRaid = new Raid(this.zanpyGuild, raidName, rolesUnparsed, gearTier, interaction);
+  createRaid(interaction: ChatInputCommandInteraction, raidName: string, rolesUnparsed: string, gearTier: string, time: string) {
+    const newRaid = new Raid(this.zanpyGuild, raidName, rolesUnparsed, gearTier, interaction, time);
 
     this.raids.push(newRaid);
 
@@ -51,13 +51,15 @@ export class Raid {
   roles: RoleSlot[] = [];
   selectedRoles: { user: User; slotIndex: number }[] = [];
   interaction: Interaction | null = null;
+  time: string = "";
 
   constructor(
     zanpyGuild: ZanpyGuild,
     raidName: string,
     unparsedRoles: string,
     gearTier: string,
-    interaction: ChatInputCommandInteraction
+    interaction: ChatInputCommandInteraction,
+    time: string
   ) {
     this.id = generateRandomId();
     this.zanpyGuild = zanpyGuild;
@@ -65,6 +67,7 @@ export class Raid {
     this.unparsedRoles = unparsedRoles;
     this.gearTier = gearTier;
     this.roleParser();
+    this.time = time;
 
     console.log(`Raid #${this.id}. Name: ${this.raidName} created.`);
 
@@ -189,7 +192,7 @@ export class Raid {
     });
 
     return [
-      `## :crossed_swords: **Рейд о 19:00 — ${this.raidName}**`,
+      `## :crossed_swords: **Збір о ${this.time} — ${this.raidName}**`,
       `### :shield: **Еквівалент зброї: ${this.gearTier}**`,
       ``,
       `**Учасники:**`,
@@ -197,7 +200,7 @@ export class Raid {
       ...lines,
       `------------------------`,
       ``,
-      `🆔 **id${this.id}**`,
+      `🆔 ${this.id}`,
       `------------------------`
     ].join("\n");
   }

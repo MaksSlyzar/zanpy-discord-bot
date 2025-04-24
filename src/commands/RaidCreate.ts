@@ -24,7 +24,7 @@ export default {
 
     try {
       await interaction.deferReply();
-      guildManager.raidManager.createRaid(interaction, raidName, rolesText, "T8");
+      guildManager.raidManager.createRaid(interaction, raidName, rolesText, "T8", date);
     } catch (err) {
       console.log(err);
     }
