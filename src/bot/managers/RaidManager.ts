@@ -82,6 +82,16 @@ export class Raid {
     });
   }
 
+  stopRaid(interaction: ChatInputCommandInteraction) {
+    const raidIndex = this.zanpyGuild.raidManager.raids.findIndex(raid => raid.id == this.id);
+
+    if (raidIndex == -1)
+      return interaction.editReply({ content: "Не знайшов такого рейду." });
+
+    this.zanpyGuild.raidManager.raids.splice(raidIndex, 1);
+    interaction.editReply(`Видалив рейд ${this.raidName}, id ${this.id}`);
+  }
+
   roleParser() {
     const names = this.unparsedRoles.split("%");
     this.roles = names.map(name => {

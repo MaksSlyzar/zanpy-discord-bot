@@ -8,7 +8,8 @@
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "build": "tsup src/index.ts --minify",
-    "build:frontend": "cd src/web/frontend && npm run build"
+    "build:frontend": "cd src/web/frontend && npm run build",
+    "dev:frontend": "cd src/web/frontend && npx vite build --watch"
   },
  "keywords": [],
   "author": "",
