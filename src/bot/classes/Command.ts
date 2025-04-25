@@ -8,7 +8,7 @@ interface Command {
     description: string
   };
 
-  execute: async (interaction: ChatInputCommandInteraction, guildManager: ZanpyGuild | undefined) => {};
+  execute(interaction: ChatInputCommandInteraction, guildManager: ZanpyGuild | undefined): Promise<void>;
 }
 
 export default Command;

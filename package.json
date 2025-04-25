@@ -7,16 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsup src/index.ts --minify"
+    "build": "tsup src/index.ts --minify",
+    "build:frontend": "cd src/web/frontend && npm run build"
   },
-  "keywords": [],
+ "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^5.0.1",
     "axios": "^1.8.4",
     "cheerio": "^1.0.0",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
+    "express": "^5.1.0",
     "fuse.js": "^7.1.0",
     "puppeteer": "^24.4.0"
   },
