@@ -5,7 +5,7 @@ import { EmbedBuilder } from "discord.js";
 
 export default {
   data: {
-    name: "raid-add",
+    name: "create-raid",
     description: "Create raid",
     options: [
       { name: "name", type: ApplicationCommandOptionType.String, description: "Enter raid name", required: true },

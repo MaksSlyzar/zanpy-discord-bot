@@ -1,9 +1,10 @@
 import Client from "./classes/Client";
-import { ChatInputApplicationCommandData, ChatInputCommandInteraction, Events, SlashCommandBuilder, StringSelectMenuInteraction } from "discord.js";
+import { ChatInputApplicationCommandData, ChatInputCommandInteraction, Events, Message, Partials, SlashCommandBuilder, StringSelectMenuInteraction } from "discord.js";
 import { config } from "./config";
 import { initGuildManager } from "./managers/InitGuildManager";
 import { loadCommands } from "./functions/loadCommands";
 import GuildManager from "./managers/GuildManager";
+import { parse } from "dotenv";
 
 const client = new Client({
   intents: ["Guilds",
@@ -12,8 +13,10 @@ const client = new Client({
     "DirectMessages",
     "GuildIntegrations",
     "GuildVoiceStates",
-    "GuildVoiceStates"
-  ]
+    "GuildVoiceStates",
+    "MessageContent"
+  ],
+  partials: [Partials.Message, Partials.Channel, Partials.Reaction]
 });
 
 const globalCommands = loadCommands();
@@ -43,6 +46,26 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.isStringSelectMenu()) stringSelectMenuInteraction(interaction);
 });
 
+client.on(Events.MessageCreate, (message: Message) => {
+  if (message.author.bot) return;
+  if (message.content.startsWith('!create-raid')) {
+    const parts = message.content.split(';');
+
+    const raidName = parts[1];
+    const rolesUnparsed = parts[4];
+    const gearTier = parts[3];
+    const time = parts[2];
+
+    const guildManager = GuildManager.zanpyGuilds.find(
+      (manager) => manager.guild.id == message.guildId
+    );
+    if (!guildManager)
+      return;
+    const raidManager = guildManager.raidManager;
+    raidManager.createRaid(message, raidName, rolesUnparsed, gearTier, time);
+  }
+
+});
 async function slashCommandsInteraction(interaction: ChatInputCommandInteraction) {
   if (interaction.command) {
     for (let command of globalCommands) {
@@ -61,7 +84,6 @@ async function stringSelectMenuInteraction(interaction: StringSelectMenuInteract
   const guild = GuildManager.zanpyGuilds.find(guild => guild.guild.id == interaction.guildId);
   if (guild == null)
     return;
-
 
   const raid = guild.raidManager.getRaidByMessageId(interaction.message.id);
   if (raid == null)

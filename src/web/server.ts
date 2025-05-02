@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("yo");
 });
 
-app.post("/api/upload", upload.single('image'), (req, res) => {
+/*app.post("/api/upload", upload.single('image'), (req, res) => {
   console.log("post")
   const file = req.file;
   if (!file)
@@ -51,7 +51,7 @@ app.post("/api/upload", upload.single('image'), (req, res) => {
   }
 
   res.send('Отримано!');
-});
+});*/
 
 app.get("/api/get-emojies", (req, res) => {
   const data = {
@@ -59,7 +59,9 @@ app.get("/api/get-emojies", (req, res) => {
     items: []
   };
 
-  const items = JSON.parse(fs.readFileSync(path.join(__dirname, "../bot/data/emojies.json"), "utf8"))["albion-icons"];
+  const items = JSON.parse(fs.readFileSync(path.join(__dirname, "../bot/data/emojies.json"), "utf8"))["albion-icons"].map((item: any) =>
+    Object.assign({ imageUrl: `/albion-icons/${item.id}.png`, name: item.names[0] }, item));
+
   const test = JSON.parse(fs.readFileSync(path.join(__dirname, "../bot/data/test-emojies.json"), "utf8"))["albion-icons"];
 
   data.test = test;

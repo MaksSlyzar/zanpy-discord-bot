@@ -14,7 +14,6 @@ interface RoleSlot extends Role {
   slotId: string;
 }
 
-
 export default class RaidManager {
   zanpyGuild: ZanpyGuild;
   raids: Array<Raid>;
@@ -24,11 +23,9 @@ export default class RaidManager {
     this.raids = [];
   }
 
-  createRaid(interaction: ChatInputCommandInteraction, raidName: string, rolesUnparsed: string, gearTier: string, time: string) {
+  createRaid(interaction: ChatInputCommandInteraction | Message, raidName: string, rolesUnparsed: string, gearTier: string, time: string) {
     const newRaid = new Raid(this.zanpyGuild, raidName, rolesUnparsed, gearTier, interaction, time);
-
     this.raids.push(newRaid);
-
   }
 
   getRaidByMessageId(messageId: string) {
@@ -36,6 +33,8 @@ export default class RaidManager {
     return output;
   }
 }
+
+
 
 function generateRandomId(): number {
   return Math.floor(Math.random() * Math.pow(10, 10));
@@ -58,7 +57,7 @@ export class Raid {
     raidName: string,
     unparsedRoles: string,
     gearTier: string,
-    interaction: ChatInputCommandInteraction,
+    interaction: Interaction | Message,
     time: string
   ) {
     this.id = generateRandomId();
@@ -71,15 +70,25 @@ export class Raid {
 
     console.log(`Raid #${this.id}. Name: ${this.raidName} created.`);
 
-
-    const channel = interaction.channel as TextChannel;
-    channel.send({
-      content: this.generateTextMessage(),
-      components: [this.createSelectMenu()],
-    }).then(msg => {
-      interaction.editReply("Ви створили кол. #ID" + this.id);
-      this.message = msg
-    });
+    if (interaction instanceof Message) {
+      const channel = interaction.channel as TextChannel;
+      channel.send({
+        content: this.generateTextMessage(),
+        components: [this.createSelectMenu()],
+      }).then(msg => {
+        this.message = msg;
+      });
+      interaction.delete();
+    } else {
+      const channel = interaction.channel as TextChannel;
+      channel.send({
+        content: this.generateTextMessage(),
+        components: [this.createSelectMenu()],
+      }).then(msg => {
+        interaction.editReply("Ви створили рейд! #ID" + this.id);
+        this.message = msg;
+      });
+    }
   }
 
   stopRaid(interaction: ChatInputCommandInteraction) {
@@ -101,10 +110,16 @@ export class Raid {
         slotId: `${base.id}-${Math.random().toString(36).substring(2, 9)}`
       };
     });
+
   }
 
   getEmojiByName(name: string) {
-    const found = emojies["albion-icons"].find((item) => item.names.includes(name));
+    let found = emojies["albion-icons"].find((item) => item.names.includes(name));
+
+    if (found == null) {
+      found = emojies["albion-icons"].find((item) => name == item.id);
+    }
+
     return found
       ? { ...found, defaultName: found.names[0] }
       : {
