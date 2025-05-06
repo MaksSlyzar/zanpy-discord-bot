@@ -25,7 +25,8 @@ app.get("/", (req, res) => {
   res.send("yo");
 });
 
-/*app.post("/api/upload", upload.single('image'), (req, res) => {
+/*
+app.post("/api/upload", upload.single('image'), (req, res) => {
   console.log("post")
   const file = req.file;
   if (!file)

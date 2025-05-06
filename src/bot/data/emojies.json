@@ -15,7 +15,9 @@
     { "id":"earthrune", "emoji": "earthrune:1367926534240731147", "names":["Голем","Earthrune"],"description":"А як стяжка працює"},
     { "id":"bedrock", "emoji": "bedrock:1367926541891272835", "names":["Кам'янка","Бедрок","Bedrock"],"description":"Беремо на деф"},
     { "id":"mainhummer", "emoji": "mainhummer:1367926524417671269","names":["Молот","Main hummer"],"description":"Стань кріпів"},
-    { "id":"witchwork", "emoji":"witchwork:1367926506025652245", "names":["Відьмовський посох","Witchwork"],"description":"Блекхол, стяжка"}
+    { "id":"witchwork", "emoji":"witchwork:1367926506025652245", "names":["Відьмовський посох","Witchwork"],"description":"Блекхол, стяжка"},
+    { "id":"realmbreaker", "emoji": "realmbreaker:1369325286566526977", "names":["Рушак","Ава сокира","Realmbreaker"],"description":"Хороша порізка мобів та дамаг"},
+    { "id":"badon", "emoji": "badon:1369325267562008687", "names":["Бадон","Badon"],"description":"Збиваємо касти"}
   ],
   "basic": {
     "cancel": { "emoji": "cancel:1364960716519641118" }
