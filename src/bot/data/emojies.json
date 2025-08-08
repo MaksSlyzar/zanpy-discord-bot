@@ -109,15 +109,15 @@
       "description": "Збиваємо касти"
     },
     {
-      "id": "blightstuff",
-      "emoji": "blightstuff:1403376459548196974",
+      "id": "blightstaff",
+      "emoji": "blightstaff:1403376459548196974",
       "names": ["Посох порчі", "Blight Staff"],
       "description": "Сьогодні у нас урок музики, будемо грати на фортепіано"
     },
     {
       "id": "greatehummer",
       "emoji": "greatehummer:1403376451889139772",
-      "names": ["Великий молот", "Great Hammer"],
+      "names": ["Великий молот", "Great Hummer"],
       "description": "Вломи так, щоб не встали"
     },
     {
