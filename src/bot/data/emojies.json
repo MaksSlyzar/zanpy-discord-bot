@@ -1,26 +1,142 @@
 {
   "albion-icons": [
-    { "id": "mistpiercer","emoji": "mistpiercer:1359162026764665013", "names": [ "Туманний пронизувач", "лук","mistpiercer" ], "description": "Нажимаєш єшку і тіпи дохнуть... Більше для нубів" },
-    { "id": "blazing", "emoji": "blazing:1359164354989260850", "names": [ "Пилаючий посох","блейза","blazing"], "description": "Однокнопочна хуйня, але багато демеджа" },
-    { "id": "lightcaller", "emoji": "lightcaller:1359441312092520500", "names": ["Світоч", "светочь", "світоч", "светлана", "lightcaller"], "description": "Піаніно..." },
-    { "id": "heavymace", "emoji": "heavymace:1359440588822413342", "names": ["Тяж булава","тяж мейса", "heavy mace"], "description": "Давай сало і стоп" },
-    { "id": "greatefrost", "emoji": "greatefrost:1359440134264590452", "names": ["Великий морозний","большой морозный", "великий морозний", "greate frost"], "description": "відчуй себе холодильником" },
-    { "id": "hallowfall", "emoji": "hallowfall:1359439960952012840", "names": ["Благодатка", "блага", "hallowfall"], "description": "Хіляй до смерті" },
-    { "id": "timestop", "emoji": "timestop:1359439577009491998", "names": ["Тайм стоп", "тайм", "тайм стоп", "time stop"], "description": "Основна єшка в яку всі заливають" },
-    { "id": "tombhammer", "emoji": "tombhammer:1359439442582175885", "names": ["Могильний молот", "могильный", "могильный молот", "tombhammer"], "description":"Даємо його в тайм стоп і радуємось життю" },
-    { "id": "dawnsong", "emoji": "dawnsong:1359440944352460840", "names": ["Пісня світанку", "песня", "dawnsong"], "description": "Підпалюй сраки і ріж хіл" },
-    { "id": "prism", "emoji": "prism:1359910694962729024", "names": ["Прізма", "prism"], "description": "Заморозь своє очко" },
-    { "id": "incube", "emoji": "incube:1359439126343974944", "names": ["Інкуба", "incube"], "description": "Ріж мобів" },
-    { "id":"rootbound", "emoji": "rootbound:1367926515789992006","names":["Хйорн","Дерево","Rootbound"],"description":"Стань деревом і закопайся від цього світу."},
-    { "id":"earthrune", "emoji": "earthrune:1367926534240731147", "names":["Голем","Earthrune"],"description":"А як стяжка працює"},
-    { "id":"bedrock", "emoji": "bedrock:1367926541891272835", "names":["Кам'янка","Бедрок","Bedrock"],"description":"Беремо на деф"},
-    { "id":"mainhummer", "emoji": "mainhummer:1367926524417671269","names":["Молот","Main hummer"],"description":"Стань кріпів"},
-    { "id":"witchwork", "emoji":"witchwork:1367926506025652245", "names":["Відьмовський посох","Witchwork"],"description":"Блекхол, стяжка"},
-    { "id":"realmbreaker", "emoji": "realmbreaker:1369325286566526977", "names":["Рушак","Ава сокира","Realmbreaker"],"description":"Хороша порізка мобів та дамаг"},
-    { "id":"badon", "emoji": "badon:1369325267562008687", "names":["Бадон","Badon"],"description":"Збиваємо касти"}
+    {
+      "id": "mistpiercer",
+      "emoji": "mistpiercer:1359162026764665013",
+      "names": ["Туманний пронизувач", "лук", "mistpiercer"],
+      "description": "Нажимаєш єшку і тіпи дохнуть... Більше для нубів"
+    },
+    {
+      "id": "blazing",
+      "emoji": "blazing:1359164354989260850",
+      "names": ["Пилаючий посох", "блейза", "blazing"],
+      "description": "Однокнопочна хуйня, але багато демеджа"
+    },
+    {
+      "id": "lightcaller",
+      "emoji": "lightcaller:1359441312092520500",
+      "names": ["Світоч", "светочь", "світоч", "светлана", "lightcaller"],
+      "description": "Піаніно..."
+    },
+    {
+      "id": "heavymace",
+      "emoji": "heavymace:1359440588822413342",
+      "names": ["Тяж булава", "тяж мейса", "heavy mace"],
+      "description": "Давай сало і стоп"
+    },
+    {
+      "id": "greatefrost",
+      "emoji": "greatefrost:1359440134264590452",
+      "names": ["Великий морозний", "большой морозный", "великий морозний", "greate frost"],
+      "description": "відчуй себе холодильником"
+    },
+    {
+      "id": "hallowfall",
+      "emoji": "hallowfall:1359439960952012840",
+      "names": ["Благодатка", "блага", "hallowfall"],
+      "description": "Хіляй до смерті"
+    },
+    {
+      "id": "timestop",
+      "emoji": "timestop:1359439577009491998",
+      "names": ["Тайм стоп", "тайм", "тайм стоп", "time stop"],
+      "description": "Основна єшка в яку всі заливають"
+    },
+    {
+      "id": "tombhammer",
+      "emoji": "tombhammer:1359439442582175885",
+      "names": ["Могильний молот", "могильный", "могильный молот", "tombhammer"],
+      "description": "Даємо його в тайм стоп і радуємось життю"
+    },
+    {
+      "id": "dawnsong",
+      "emoji": "dawnsong:1359440944352460840",
+      "names": ["Пісня світанку", "песня", "dawnsong"],
+      "description": "Підпалюй сраки і ріж хіл"
+    },
+    {
+      "id": "prism",
+      "emoji": "prism:1359910694962729024",
+      "names": ["Прізма", "prism"],
+      "description": "Заморозь своє очко"
+    },
+    {
+      "id": "incube",
+      "emoji": "incube:1359439126343974944",
+      "names": ["Інкуба", "incube"],
+      "description": "Ріж мобів"
+    },
+    {
+      "id": "rootbound",
+      "emoji": "rootbound:1367926515789992006",
+      "names": ["Хйорн", "Дерево", "Rootbound"],
+      "description": "Стань деревом і закопайся від цього світу."
+    },
+    {
+      "id": "earthrune",
+      "emoji": "earthrune:1367926534240731147",
+      "names": ["Голем", "Earthrune"],
+      "description": "А як стяжка працює"
+    },
+    {
+      "id": "bedrock",
+      "emoji": "bedrock:1367926541891272835",
+      "names": ["Кам'янка", "Бедрок", "Bedrock"],
+      "description": "Беремо на деф"
+    },
+    {
+      "id": "mainhummer",
+      "emoji": "mainhummer:1367926524417671269",
+      "names": ["Молот", "Main hummer"],
+      "description": "Стань кріпів"
+    },
+    {
+      "id": "witchwork",
+      "emoji": "witchwork:1367926506025652245",
+      "names": ["Відьмовський посох", "Witchwork"],
+      "description": "Блекхол, стяжка"
+    },
+    {
+      "id": "realmbreaker",
+      "emoji": "realmbreaker:1369325286566526977",
+      "names": ["Рушак", "Ава сокира", "Realmbreaker"],
+      "description": "Хороша порізка мобів та дамаг"
+    },
+    {
+      "id": "badon",
+      "emoji": "badon:1369325267562008687",
+      "names": ["Бадон", "Badon"],
+      "description": "Збиваємо касти"
+    },
+    {
+      "id": "blightstuff",
+      "emoji": "blightstuff:1403376459548196974",
+      "names": ["Посох порчі", "Blight Staff"],
+      "description": "Сьогодні у нас урок музики, будемо грати на фортепіано"
+    },
+    {
+      "id": "greatehummer",
+      "emoji": "greatehummer:1403376451889139772",
+      "names": ["Великий молот", "Great Hammer"],
+      "description": "Вломи так, щоб не встали"
+    },
+    {
+      "id": "halberd",
+      "emoji": "halberd:1403376445476175942",
+      "names": ["Падальщик", "Halberd"],
+      "description": "Розрубай ворогів на шмаття"
+    },
+    {
+      "id": "rotcaller",
+      "emoji": "rotcaller:1403376436504559717",
+      "names": ["Посох гниття", "Rotcaller"],
+      "description": "Розкладай все навколо повільно, але боляче"
+    }
   ],
   "basic": {
-    "cancel": { "emoji": "cancel:1364960716519641118" }
+    "cancel": {
+      "emoji": "cancel:1364960716519641118"
+    }
   }
 }
 
